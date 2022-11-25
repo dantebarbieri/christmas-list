@@ -1,0 +1,28 @@
+:root {
+    --font-body: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    font-family: var(--font-body);
+    color: var(--color-text);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--color-bg-0);
+    overscroll-behavior: none;
+}
+
+a.no-link {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+a:not(.no-link) {
+    color: var(--color-theme-1);
+    text-decoration: none;
+}
+
+a:not(.no-link):hover {
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-theme-2);
+}

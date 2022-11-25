@@ -2,7 +2,26 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<script>
+			// if (window.location.protocol === 'http:') {
+			// 	window.location.protocol = 'https:';
+			// }
+			// If `prefers-color-scheme` is not supported, fall back to dark mode.
+			// In this case, dark.css will be downloaded with `highest` priority.
+			if (!window.matchMedia('(prefers-color-scheme)').matches) {
+				document.documentElement.style.display = 'none';
+				document.head.insertAdjacentHTML(
+					'beforeend',
+					'<link rel="stylesheet" href="/dark.css" onload="document.documentElement.style.display = ``">'
+				);
+			}
+		</script>
+	
+		<link rel="stylesheet" href="%sveltekit.assets%/light.css" media="(prefers-color-scheme: light)">
+		<link rel="stylesheet" href="%sveltekit.assets%/dark.css"
+			media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark)">
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" data-href-dark="%sveltekit.assets%/favicon.svg" data-href-light="%sveltekit.assets%/favicon-light.svg" />
+		<script defer src="%sveltekit.assets%/darkmode.js"></script>
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 	</head>
