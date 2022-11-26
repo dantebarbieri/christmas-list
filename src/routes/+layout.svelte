@@ -33,6 +33,12 @@
 		box-sizing: border-box;
 	}
 
+	@media (max-width: 580px) {
+		main {
+			max-width: 100%;
+		}
+	}
+
 	footer {
 		display: flex;
 		flex-direction: column;

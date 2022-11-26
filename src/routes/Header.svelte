@@ -90,6 +90,7 @@
 		list-style: none;
 		gap: 1em;
 		background-size: contain;
+		flex-wrap: wrap;
 	}
 
 	li {

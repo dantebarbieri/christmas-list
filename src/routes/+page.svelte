@@ -74,8 +74,21 @@
 
 <style>
     div {
+		--grid-columns: 1;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(var(--grid-columns), 1fr);
         gap: 1em;
     }
+
+	@media (min-width: 580px) and (max-width: 64rem) {
+		div {
+			--grid-columns: 2;
+		}
+	}
+
+	@media (min-width: 64rem) {
+		div {
+			--grid-columns: 3;
+		}
+	}
 </style>
